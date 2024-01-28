@@ -36,3 +36,13 @@
 ## Usage
 
 Use this project as a starting point, or edit it to your liking and use as is. It will be a fully featured Weather application.
+
+## License
+
+Distributed under the MIT license. See `LICENSE.txt` for more information.
+
+## Contact
+
+John Downs - [@facebook](https://facebook.com/john.downs.5872)
+
+Project Link: [https://github.com/xxxcodeingxxx/molecular-mass](https://github.com/xxxcodeingxxx/molecular-mass)
