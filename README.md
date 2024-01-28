@@ -5,7 +5,7 @@
 <br />
 <div align="center">
    <a href="https://github.com/xxxcodeingxxxx/molecular-mass">
-      <img src="./public/images/logo.svg" alt="Weather Data Logo" width="80" height="80">
+      <img src="./public/images/logo.svg" alt="Weather Data Logo" width="128" height="128">
    </a>
 </div>
 
