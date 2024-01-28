@@ -1,6 +1,6 @@
 # Weather Data: Blog
 
-<span style="color: red; font-weight: bold;">In Production Not Completed</span>
+## In Production
 
 <br />
 <div align="center">
