@@ -2,5 +2,5 @@
 
 ### Built With
 
-- [![Astro][Astro.js]][Astro-url]
-- [![Tailwind][Tailwind.js]][Tailwind-url]
+- [Astro](https://astro.build)
+- [Tailwind](https://tailwindcss.com/)
