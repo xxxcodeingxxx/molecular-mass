@@ -23,20 +23,25 @@ const posts = (await getCollection('blog')).sort(
         <main class="w-10/12 h-auto mx-auto">
             <section class="w-full h-auto mx-auto">
                 <ul
-                    class="w-full h-auto grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 py-12"
+                    class="w-full h-auto grid grid-cols-1 text-darkMode md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 lg:gap-12 py-12"
                 >
                     {
                         posts.map((post) => (
-                            <li>
+                            <li
+                                class="min-h-[500px] p-4 relative rounded-2xl"
+                                style={`background: ${post.data.heroColor}`}
+                            >
                                 <a href={`/blog/${post.slug}/`}>
                                     <img
-                                        width={720}
-                                        height={360}
+                                        class="absolute w-full h-[360px] ease-in-out duration-700 bottom-0 left-0 rounded-2xl"
                                         src={post.data.heroImage}
-                                        alt=""
+                                        alt={post.data.imgAlt}
                                     />
                                     <h4 class="title">{post.data.title}</h4>
-                                    <p class="date">
+                                    <p class="text-sm my-2">
+                                        {post.data.description}
+                                    </p>
+                                    <p class="date text-xs">
                                         <FormattedDate
                                             date={post.data.pubDate}
                                         />
