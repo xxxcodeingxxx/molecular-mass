@@ -4,6 +4,7 @@ import axios from 'axios'
 const zip = document.getElementById('zipCode')
 
 const getGeo = async () => {
+    // Get your own API Key @ https://openweathermap.org/
     var key = '##############################'
     var cityName = zip.value
     var url = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${key}`
