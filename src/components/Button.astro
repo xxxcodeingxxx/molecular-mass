@@ -1,0 +1,13 @@
+---
+export interface Props {
+    id: string
+    txt: string
+    className: string
+}
+
+const { id, txt, className } = Astro.props
+---
+
+<button id={id} class={`py-2 px-4 text-center ${className}`}>
+    {txt}
+</button>
