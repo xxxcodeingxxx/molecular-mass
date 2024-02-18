@@ -23,17 +23,17 @@ const posts = (await getCollection('blog')).sort(
         <main class="w-10/12 h-auto mx-auto">
             <section class="w-full h-auto mx-auto">
                 <ul
-                    class="w-full h-auto grid grid-cols-1 text-darkMode md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 lg:gap-12 py-12"
+                    class="w-full h-auto grid grid-cols-1 text-darkMode md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 gap-4 md:gap-8 lg:gap-12 py-12"
                 >
                     {
                         posts.map((post) => (
                             <li
-                                class="min-h-[500px] p-4 relative rounded-2xl"
-                                style={`background: ${post.data.heroColor}`}
+                                class="min-h-[500px] p-4 relative rounded-tr-2xl rounded-tl-2xl"
+                                style={`background: linear-gradient(45deg, ${post.data.colorOne}, ${post.data.colorTwo}) `}
                             >
                                 <a href={`/blog/${post.slug}/`}>
                                     <img
-                                        class="absolute w-full h-[360px] ease-in-out duration-700 bottom-0 left-0 rounded-2xl"
+                                        class="absolute w-full h-[240px] imgs bottom-0 left-0"
                                         src={post.data.heroImage}
                                         alt={post.data.imgAlt}
                                     />
@@ -41,7 +41,9 @@ const posts = (await getCollection('blog')).sort(
                                     <p class="text-sm my-2">
                                         {post.data.description}
                                     </p>
-                                    <p class="date text-xs">
+                                    <p
+                                        class={`date text-xs font-bold !text-${post.data.txtColor}-950`}
+                                    >
                                         <FormattedDate
                                             date={post.data.pubDate}
                                         />
@@ -54,5 +56,10 @@ const posts = (await getCollection('blog')).sort(
             </section>
         </main>
         <Footer />
+        <style>
+            .imgs {
+                box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.25);
+            }
+        </style>
     </body>
 </html>
