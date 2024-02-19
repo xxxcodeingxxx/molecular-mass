@@ -4,6 +4,7 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 import Button from '../components/Button.astro'
+import Rhombus from '../components/Rhombus.astro'
 ---
 
 <!doctype html>
@@ -154,6 +155,32 @@ import Button from '../components/Button.astro'
                         />
                     </div>
                 </div>
+            </div>
+            <div class="grid grid-cols-1 relative gap-y-8 w-full h-auto py-12">
+                <Rhombus
+                    day="Fri"
+                    img="https://plus.unsplash.com/premium_photo-1664298006973-e98eb94d006c"
+                    tempH={88}
+                    tempL={66}
+                    windOne="SW @ 8mph"
+                    windTwo="SE @ 4mph"
+                />
+                <Rhombus
+                    day="Sat"
+                    img="https://images.unsplash.com/photo-1537210249814-b9a10a161ae4"
+                    tempH={86}
+                    tempL={72}
+                    windOne="SW @ 8mph"
+                    windTwo="SE @ 4mph"
+                />
+                <Rhombus
+                    day="Sun"
+                    img="https://images.unsplash.com/photo-1581059729226-c493d3086748"
+                    tempH={87}
+                    tempL={71}
+                    windOne="SW @ 8mph"
+                    windTwo="SE @ 4mph"
+                />
             </div>
         </main>
         <Footer />

@@ -1,0 +1,51 @@
+---
+export interface Props {
+    img: string
+    tempH: number
+    tempL: number
+    day: string
+    windOne?: string
+    windTwo?: string
+}
+
+const { img, tempH, tempL, day, windOne, windTwo } = Astro.props
+---
+
+<div
+    class="w-1/2 lg:w-1/4 h-auto shadow-xl z-10 barely uppercase font-semibold -mb-8 -ml-5 md:-ml-9 bg-gray-600 text-4xl text-white pl-14 lg:pl-28 py-2"
+>
+    {day}
+</div>
+<div class="w-full h-auto mx-auto relative barely bg-gray-600 z-0">
+    <div class="w-full h-auto mx-auto grid grid-cols-12">
+        <div
+            class={`w-full h-auto bg-cover col-span-6 barelyEnd bg-center p-32 text-center`}
+            style={`background-image: url('${img}');`}
+        >
+        </div>
+        <div
+            class="w-full h-auto barely -ml-20 py-20 col-span-3 bg-gray-500 text-center text-5xl font-semibold"
+        >
+            {tempH} °
+            <span class="block text-2xl font-normal text-white text-center">
+                {windOne}
+            </span>
+        </div>
+        <div
+            class="w-full h-auto barely col-span-3 text-center py-20 pr-20 text-5xl font-semibold"
+        >
+            {tempL} °
+            <span class="block text-2xl font-normal text-white text-center">
+                {windTwo}
+            </span>
+        </div>
+    </div>
+</div>
+<style>
+    .barely {
+        clip-path: polygon(0 0, 90% 0, 100% 100%, 10% 100%);
+    }
+    .barelyEnd {
+        clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+    }
+</style>
