@@ -156,7 +156,9 @@ import Rhombus from '../components/Rhombus.astro'
                     </div>
                 </div>
             </div>
-            <div class="grid grid-cols-1 relative gap-y-8 w-full h-auto py-12">
+            <div
+                class="grid grid-cols-1 relative gap-y-8 w-full mx-auto h-auto py-12"
+            >
                 <Rhombus
                     day="Fri"
                     img="https://plus.unsplash.com/premium_photo-1664298006973-e98eb94d006c"
@@ -164,6 +166,10 @@ import Rhombus from '../components/Rhombus.astro'
                     tempL={66}
                     windOne="SW @ 8mph"
                     windTwo="SE @ 4mph"
+                    iconOne="/images/weatherUI/pMoon.svg"
+                    iconOneAlt="Partial Moon"
+                    iconTwo="/images/weatherUI/pMoonRain.svg"
+                    iconTwoAlt="Partial Moon and Rain"
                 />
                 <Rhombus
                     day="Sat"
@@ -172,6 +178,10 @@ import Rhombus from '../components/Rhombus.astro'
                     tempL={72}
                     windOne="SW @ 8mph"
                     windTwo="SE @ 4mph"
+                    iconOne="/images/weatherUI/pSunny.svg"
+                    iconOneAlt="Partial Sunlight"
+                    iconTwo="/images/weatherUI/pSunRain.svg"
+                    iconTwoAlt="Partial Sunlight and Rain"
                 />
                 <Rhombus
                     day="Sun"
@@ -180,6 +190,10 @@ import Rhombus from '../components/Rhombus.astro'
                     tempL={71}
                     windOne="SW @ 8mph"
                     windTwo="SE @ 4mph"
+                    iconOne="/images/weatherUI/sunny.svg"
+                    iconOneAlt="Windy Conditions"
+                    iconTwo="/images/weatherUI/pSunRain.svg"
+                    iconTwoAlt="Windy Conditions Cold"
                 />
             </div>
         </main>

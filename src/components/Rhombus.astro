@@ -6,9 +6,24 @@ export interface Props {
     day: string
     windOne?: string
     windTwo?: string
+    iconOne?: string
+    iconTwo?: string
+    iconOneAlt?: string
+    iconTwoAlt?: string
 }
 
-const { img, tempH, tempL, day, windOne, windTwo } = Astro.props
+const {
+    img,
+    tempH,
+    tempL,
+    day,
+    windOne,
+    windTwo,
+    iconOne,
+    iconTwo,
+    iconOneAlt,
+    iconTwoAlt,
+} = Astro.props
 ---
 
 <div
@@ -24,16 +39,30 @@ const { img, tempH, tempL, day, windOne, windTwo } = Astro.props
         >
         </div>
         <div
-            class="w-full h-auto barely -ml-20 py-20 col-span-3 bg-gray-500 text-center text-5xl font-semibold"
+            class="w-full h-auto barely -ml-20 py-12 col-span-3 bg-gray-500 text-center text-5xl font-semibold"
         >
+            <div class="w-full h-auto py-2">
+                <img
+                    class="w-1/2 h-auto mx-auto"
+                    src={iconOne}
+                    alt={iconOneAlt}
+                />
+            </div>
             {tempH} °
             <span class="block text-2xl font-normal text-white text-center">
                 {windOne}
             </span>
         </div>
         <div
-            class="w-full h-auto barely col-span-3 text-center py-20 pr-20 text-5xl font-semibold"
+            class="w-full h-auto barely col-span-3 text-center py-12 pr-32 text-5xl font-semibold"
         >
+            <div class="w-full h-auto py-2">
+                <img
+                    class="w-1/2 h-auto mx-auto"
+                    src={iconTwo}
+                    alt={iconTwoAlt}
+                />
+            </div>
             {tempL} °
             <span class="block text-2xl font-normal text-white text-center">
                 {windTwo}
