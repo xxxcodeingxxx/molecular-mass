@@ -13,11 +13,28 @@ import { SITE_TITLE } from '../consts'
     class={`shadow-lg w-full h-auto px-6 bg-gray-200 dark:shadow-none dark:bg-headerBg ${classNames}`}
 >
     <nav>
-        <h2 class="text-xl"><a href="/">{SITE_TITLE}</a></h2>
+        <h2 class="text-xl duration-700 ease-in-out hover:text-booo">
+            <a href="/">{SITE_TITLE}</a>
+        </h2>
         <div class="internal-links">
-            <HeaderLink href="/">Home</HeaderLink>
-            <HeaderLink href="/blog">Blog</HeaderLink>
-            <HeaderLink href="/about">About</HeaderLink>
+            <HeaderLink
+                class:list={`duration-700 ease-in-out text-xl`}
+                href="/"
+            >
+                Home
+            </HeaderLink>
+            <HeaderLink
+                class:list={`duration-700 ease-in-out text-xl`}
+                href="/blog"
+            >
+                Blog
+            </HeaderLink>
+            <HeaderLink
+                class:list={`duration-700 ease-in-out text-xl`}
+                href="/about"
+            >
+                About
+            </HeaderLink>
         </div>
         <div class="social-links">
             <a
@@ -27,7 +44,9 @@ import { SITE_TITLE } from '../consts'
             >
                 <span class="sr-only">Go to our GitHub repo</span>
                 <span>
-                    <i class="fa-brands fa-github fa-2x"></i>
+                    <i
+                        class="fa-brands fa-github fa-2x duration-700 ease-in-out hover:text-booo"
+                    ></i>
                 </span>
             </a>
             <a
@@ -37,7 +56,9 @@ import { SITE_TITLE } from '../consts'
             >
                 <span class="sr-only">Follow Us On Twitter</span>
                 <span>
-                    <i class="fa-brands fa-x-twitter fa-2x"></i>
+                    <i
+                        class="fa-brands fa-x-twitter fa-2x duration-700 ease-in-out hover:text-booo"
+                    ></i>
                 </span>
             </a>
             <a
@@ -47,7 +68,9 @@ import { SITE_TITLE } from '../consts'
             >
                 <span class="sr-only">Follow Us On Instagram</span>
                 <span>
-                    <i class="fa-brands fa-instagram fa-2x"></i>
+                    <i
+                        class="fa-brands fa-instagram fa-2x duration-700 ease-in-out hover:text-booo"
+                    ></i>
                 </span>
             </a>
         </div>

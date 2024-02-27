@@ -9,6 +9,8 @@ export default {
         darkMode: "#333333",
         dmTxt: "#dbdbdb",
         headerBg: "#2b2b2b",
+        booo: "rgb(6 182 212)",
+        txtDark: "rgb(94 94 94)",
       },
     },
   },
