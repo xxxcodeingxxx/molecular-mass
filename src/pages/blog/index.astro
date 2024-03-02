@@ -17,51 +17,108 @@ const posts = (await getCollection('blog')).sort(
         <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     </head>
     <body
-        class="bg-light w-screen h-auto text-lteTxt dark:bg-darkMode dark:text-dmTxt"
+        class="bg-light w-screen relative h-auto text-lteTxt z-0 overflow-x-hidden dark:bg-darkMode dark:text-dmTxt bg-center bg-cover bg-no-repeat bg-[url('/images/blogImgs/blog-bg.svg')] bg-fixed"
     >
-        <Header />
-        <main class="w-10/12 h-auto mx-auto">
-            <section class="w-full h-auto mx-auto">
-                <h1 class="font-bold text-5xl mt-12 text-white">
-                    Weather News You Can Trust
-                </h1>
-                <ul
-                    class="w-full h-auto grid grid-cols-1 text-darkMode md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-12 py-12"
-                >
-                    {
-                        posts.map((post) => (
-                            <li
-                                class="min-h-[500px] p-4 relative text-center rounded-tr-2xl rounded-tl-2xl"
-                                style={`background: linear-gradient(45deg, ${post.data.colorOne}, ${post.data.colorTwo}) `}
-                            >
-                                <a href={`/blog/${post.slug}/`}>
-                                    <img
-                                        class="absolute w-full h-full imgs bottom-0 left-0"
-                                        src={post.data.heroImage}
-                                        alt={post.data.imgAlt}
-                                    />
-                                    <h4 class="text-4xl absolute bg-black/75 top-32 left-0 z-20 text-gray-200 py-3 text-center px-6 -rotate-12">
-                                        {post.data.title}
-                                    </h4>
-                                    <p class="text-base bg-black my-2 absolute bottom-20 left-0 z-20 -rotate-12 py-3 text-white px-6">
-                                        {post.data.description}
-                                    </p>
-                                    <p
-                                        class={`date text-xs text-left font-bold text-white`}
+        <div class="w-full h-full absolute top-0 left-0 z-10 bg-black/75"></div>
+        <Header classNames="relative z-20" />
+        <div class="w-full h-auto mx-auto grid grid-cols-1 md:grid-cols-4">
+            <div class="w-full h-auto mx-auto col-span-3">
+                <main class="w-10/12 h-auto mx-auto relative z-20">
+                    <section class="w-full h-auto mx-auto">
+                        <h1 class="font-bold text-5xl mt-12 text-white">
+                            Weather News You Can Trust
+                        </h1>
+                        <ul
+                            class="w-full h-auto grid grid-cols-1 text-darkMode md:grid-cols-2 xl:grid-cols-3 gap-12 py-12"
+                        >
+                            {
+                                posts.map((post) => (
+                                    <li
+                                        class="min-h-[500px] p-4 relative text-center rounded-tr-2xl rounded-tl-2xl"
+                                        style={`background: linear-gradient(45deg, ${post.data.colorOne}, ${post.data.colorTwo}) `}
                                     >
-                                        Wrote: <br />
-                                        <FormattedDate
-                                            date={post.data.pubDate}
-                                        />
-                                    </p>
-                                </a>
-                            </li>
-                        ))
-                    }
-                </ul>
-            </section>
-        </main>
-        <Footer />
+                                        <a href={`/blog/${post.slug}/`}>
+                                            <img
+                                                class="absolute w-full h-full imgs bottom-0 left-0"
+                                                src={post.data.heroImage}
+                                                alt={post.data.imgAlt}
+                                            />
+                                            <h4 class="text-4xl absolute bg-black/75 top-32 left-0 z-20 text-gray-200 py-3 text-center px-6 -rotate-12">
+                                                {post.data.title}
+                                            </h4>
+                                            <p class="text-base bg-black my-2 absolute bottom-20 left-0 z-20 -rotate-12 py-3 text-white px-6">
+                                                {post.data.description}
+                                            </p>
+                                            <p
+                                                class={`date text-xs text-left font-bold text-white`}
+                                            >
+                                                Wrote: <br />
+                                                <FormattedDate
+                                                    date={post.data.pubDate}
+                                                />
+                                            </p>
+                                        </a>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </section>
+                </main>
+            </div>
+            <div
+                class="w-10/12 h-auto mx-auto relative py-16 md:py-32 z-20 col-span-1"
+            >
+                <div class="w-full h-auto mx-auto">
+                    <h3 class="text-3xl mb-6">Local UnLive Weather</h3>
+                    <div
+                        class="w-full h-auto grid grid-cols-2 md:grid-cols-3 gap-4"
+                    >
+                        <div
+                            id="box_1"
+                            class="w-full h-auto p-10 mx-auto bg-indigo-300 cursor-pointer duration-700 ease-in-out border-2 border-indigo-300 hover:bg-transparent"
+                        >
+                        </div>
+                        <div
+                            id="box_2"
+                            class="w-full h-auto p-10 mx-auto bg-amber-300 cursor-pointer duration-700 ease-in-out border-2 border-amber-300 hover:bg-transparent"
+                        >
+                        </div>
+                        <div
+                            id="box_3"
+                            class="w-full h-auto p-10 mx-auto bg-sky-300 cursor-pointer duration-700 ease-in-out border-2 border-sky-300 hover:bg-transparent"
+                        >
+                        </div>
+                        <div
+                            id="box_4"
+                            class="w-full h-auto p-10 mx-auto bg-rose-300 cursor-pointer duration-700 ease-in-out border-2 border-rose-300 hover:bg-transparent"
+                        >
+                        </div>
+                        <div
+                            id="box_5"
+                            class="w-full h-auto p-10 mx-auto bg-lime-300 cursor-pointer duration-700 ease-in-out border-2 border-lime-300 hover:bg-transparent"
+                        >
+                        </div>
+                        <div
+                            id="box_6"
+                            class="w-full h-auto p-10 mx-auto bg-blue-300 cursor-pointer duration-700 ease-in-out border-2 border-blue-300 hover:bg-transparent"
+                        >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            id="screenBlock"
+            class="w-screen h-full absolute bg-center duration-700 ease-in-out top-0 p-12 left-0 z-30 hidden"
+        >
+            <button
+                id="closeBtn"
+                class="py-2 px-4 text-base text-center text-white bg-black"
+            >
+                &larr; <span class="ml-2 uppercase">Go Back</span>
+            </button>
+        </div>
+        <Footer classNames="relative z-20" />
         <style>
             .imgs {
                 box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.25);
@@ -75,6 +132,13 @@ const posts = (await getCollection('blog')).sort(
                     0 20%
                 );
             }
+
+            #screenBlock {
+                background-size: 0% 0%;
+            }
         </style>
+        <script>
+            import '../../scripts/blog'
+        </script>
     </body>
 </html>
