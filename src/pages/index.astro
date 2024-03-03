@@ -15,10 +15,16 @@ import Rhombus from '../components/Rhombus.astro'
     <body
         class="w-screen h-auto bg-light text-lteTxt dark:bg-darkMode dark:text-dmTxt"
     >
-        <Header title={SITE_TITLE} />
+        <Header />
         <main class="w-3/4 h-auto mx-auto py-20">
             <h1 class="text-3xl font-semibold text-center">
-                Local Weather Data
+                Local Weather Data <span>
+                    <img
+                        class="w-16 inline-block ml-2 h-auto"
+                        src="/images/logo.svg"
+                        alt="Logo"
+                    />
+                </span>
             </h1>
             <div class="mx-auto w-full py-8 lg:w-1/2 h-auto">
                 <input
