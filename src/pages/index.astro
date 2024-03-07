@@ -163,9 +163,21 @@ import Rhombus from '../components/Rhombus.astro'
                 </div>
             </div>
             <div
-                class="grid grid-cols-1 relative gap-y-8 w-full mx-auto h-auto py-12"
+                class="grid grid-cols-3 relative gap-4 w-full mx-auto h-auto py-12"
             >
-                <Rhombus
+                <div class="w-full h-auto mx-auto">
+                    <div
+                        class="w-full h-auto py-40 bg-red-500 bg-cover bg-center bg-no-repeat bg-[url('/images/blogImgs/hurricane.jpg')]"
+                    >
+                    </div>
+                </div>
+                <div class="w-full h-auto mx-auto">
+                    <div class="w-full h-auto py-20 bg-red-500"></div>
+                </div>
+                <div class="w-full h-auto mx-auto">
+                    <div class="w-full h-auto py-20 bg-red-500"></div>
+                </div>
+                <!-- <Rhombus
                     day="Fri"
                     img="https://plus.unsplash.com/premium_photo-1664298006973-e98eb94d006c"
                     tempH={88}
@@ -200,7 +212,7 @@ import Rhombus from '../components/Rhombus.astro'
                     iconOneAlt="Windy Conditions"
                     iconTwo="/images/weatherUI/pSunRain.svg"
                     iconTwoAlt="Windy Conditions Cold"
-                />
+                /> -->
             </div>
         </main>
         <Footer />
