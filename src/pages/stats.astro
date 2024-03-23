@@ -1,0 +1,79 @@
+---
+import Header from '../components/Header.astro'
+import BaseHead from '../components/BaseHead.astro'
+import Footer from '../components/Footer.astro'
+import Button from '../components/Button.astro'
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <BaseHead
+            title="Statistics Page"
+            description="Page dedicated to gathering information and give statistical probabilities."
+        />
+    </head>
+    <body
+        class="w-screen h-auto bg-light text-lteTxt dark:bg-darkMode dark:text-dmTxt"
+    >
+        <Header />
+        <div class="w-10/12 py-12 h-auto mx-auto text-center">
+            <div class="w-full h-auto grid grid-cols-4 gap-4">
+                <div class="w-full h-auto">
+                    <h3 class="text-2xl text-dmTxt my-4 text-center">
+                        City Name:
+                    </h3>
+                    <input
+                        id="cName"
+                        type="text"
+                        class="w-full h-8 px-4 text-base text-black/75"
+                        placeholder="Chicago"
+                    />
+                </div>
+                <div class="w-full h-auto">
+                    <h3 class="text-2xl text-dmTxt my-4 text-center">
+                        City Population:
+                    </h3>
+                    <input
+                        id="cPop"
+                        type="text"
+                        class="w-full h-8 px-4 text-base text-black/75 placeholder:text-black"
+                        placeholder="2697000"
+                    />
+                </div>
+                <div class="w-full h-auto">
+                    <h3 class="text-2xl text-dmTxt my-4 text-center">
+                        City Murders:
+                    </h3>
+                    <input
+                        id="cMurder"
+                        type="text"
+                        class="w-full h-8 px-4 text-base text-black/75"
+                        placeholder="800"
+                    />
+                </div>
+                <div class="w-full h-auto">
+                    <h3 class="text-2xl text-dmTxt my-4 text-center">
+                        Chances of Being Murdered
+                    </h3>
+                    <Button
+                        id="submit"
+                        className="bg-black text-white text-lg"
+                        txt="Submit"
+                    />
+                </div>
+            </div>
+            <!-- End of grid -->
+            <div
+                id="answers"
+                class="w-3/4 mx-auto hidden h-auto py-20 bg-white my-20 text-black text-xl"
+            >
+                Hello World!!
+            </div>
+        </div>
+        <Footer />
+        <script>
+            import '../scripts/stats'
+        </script>
+    </body>
+</html>
