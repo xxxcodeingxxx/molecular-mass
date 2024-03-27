@@ -26,7 +26,7 @@ import Button from '../components/Button.astro'
                     <input
                         id="cName"
                         type="text"
-                        class="w-full h-8 px-4 text-base text-black/75"
+                        class="w-full h-8 px-4 text-base text-black"
                         placeholder="Chicago"
                     />
                 </div>
@@ -37,7 +37,7 @@ import Button from '../components/Button.astro'
                     <input
                         id="cPop"
                         type="text"
-                        class="w-full h-8 px-4 text-base text-black/75 placeholder:text-black"
+                        class="w-full h-8 px-4 text-base text-black"
                         placeholder="2697000"
                     />
                 </div>
@@ -48,7 +48,7 @@ import Button from '../components/Button.astro'
                     <input
                         id="cMurder"
                         type="text"
-                        class="w-full h-8 px-4 text-base text-black/75"
+                        class="w-full h-8 px-4 text-base text-black"
                         placeholder="800"
                     />
                 </div>
@@ -66,9 +66,12 @@ import Button from '../components/Button.astro'
             <!-- End of grid -->
             <div
                 id="answers"
-                class="w-3/4 mx-auto hidden h-auto py-20 bg-white my-20 text-black text-xl"
+                class="w-3/4 mx-auto rounded-xl hidden h-auto py-20 bg-white my-20 text-black text-xl"
             >
                 Hello World!!
+            </div>
+            <div style="w-full h-auto">
+                <canvas class="py-20" id="acquisitions"></canvas>
             </div>
         </div>
         <Footer />
