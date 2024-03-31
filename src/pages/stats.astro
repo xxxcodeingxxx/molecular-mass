@@ -58,20 +58,25 @@ import Button from '../components/Button.astro'
                     </h3>
                     <Button
                         id="submit"
-                        className="bg-black text-white text-lg"
+                        className="bg-green-400 font-semibold duration-700 ease-in-out border-2 border-green-400 rounded-xl text-white text-lg hover:bg-white hover:text-green-400"
                         txt="Submit"
                     />
                 </div>
             </div>
             <!-- End of grid -->
             <div
-                id="answers"
-                class="w-3/4 mx-auto rounded-xl hidden h-auto py-20 bg-white my-20 text-black text-xl"
+                class="w-3/4 h-auto relative mx-auto z-0 bg-center bg-cover bg-no-repeat bg-[url('/images/stats/statsGraphic.jpeg')]"
             >
-                Hello World!!
+                <div class="w-full h-auto absolute bg-black top-0 left-0 z-10">
+                </div>
+                <div
+                    id="answers"
+                    class="w-full rounded-xl hidden relative z-20 h-auto py-20 my-20 text-2xl"
+                >
+                </div>
             </div>
             <div style="w-full h-auto">
-                <canvas class="py-20" id="acquisitions"></canvas>
+                <canvas class="py-20" id="shyTown"></canvas>
             </div>
             <div style="w-full h-auto">
                 <canvas class="py-20" id="newYork"></canvas>
