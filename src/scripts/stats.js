@@ -5,6 +5,7 @@ const murders = document.getElementById('cMurder')
 const submit = document.getElementById('submit')
 const Chicago = document.getElementById('shyTown')
 const newYork = document.getElementById('newYork')
+const losAngels = document.getElementById('losAngeles')
 // Color Variables For Charts
 
 // const cyan300 = 'rgb(103 232 249)'
@@ -82,8 +83,76 @@ import Chart from 'chart.js/auto'
             datasets: [
                 {
                     label: 'Chicago Murders Yearly',
-                    borderColor: indigo500,
-                    backgroundColor: violet400,
+                    borderColor: 'rgb(6 182 212)',
+                    backgroundColor: 'rgb(14 116 144)',
+                    data: data.map((row) => row.count),
+                },
+            ],
+        },
+    })
+})()
+;(async function () {
+    const data = [
+        { year: 1985, count: 1326 },
+        { year: 1986, count: 1408 },
+        { year: 1987, count: 1412 },
+        { year: 1988, count: 1349 },
+        { year: 1989, count: 1587 },
+        { year: 1990, count: 1768 },
+        { year: 1991, count: 1856 },
+        { year: 1992, count: 1919 },
+        { year: 1993, count: 1944 },
+        { year: 1994, count: 1669 },
+        { year: 1995, count: 1682 },
+        { year: 1996, count: 1398 },
+        { year: 1997, count: 1176 },
+        { year: 1998, count: 959 },
+        { year: 1999, count: 891 },
+        { year: 2000, count: 1000 },
+        { year: 2001, count: 1070 },
+        { year: 2002, count: 1162 },
+        { year: 2003, count: 1053 },
+        { year: 2004, count: 1038 },
+        { year: 2005, count: 1068 },
+        { year: 2006, count: 1012 },
+        { year: 2007, count: 863 },
+        { year: 2008, count: 806 },
+        { year: 2009, count: 699 },
+        { year: 2010, count: 617 },
+        { year: 2011, count: 569 },
+        { year: 2012, count: 600 },
+        { year: 2013, count: 543 },
+        { year: 2014, count: 526 },
+        { year: 2015, count: 592 },
+        { year: 2016, count: 622 },
+        { year: 2017, count: 580 },
+        { year: 2018, count: 570 },
+        { year: 2019, count: 508 },
+        { year: 2020, count: 677 },
+        { year: 2021, count: 844 },
+        { year: 2022, count: 739 },
+    ]
+
+    new Chart(losAngels, {
+        type: 'line',
+        options: {
+            animations: {
+                tension: {
+                    duration: 2000,
+                    easing: 'linear',
+                    from: 1,
+                    to: 0,
+                    loop: true,
+                },
+            },
+        },
+        data: {
+            labels: data.map((row) => row.year),
+            datasets: [
+                {
+                    label: 'Los Angeles Homicides Yearly',
+                    borderColor: 'rgb(6 182 212)',
+                    backgroundColor: 'rgb(14 116 144)',
                     data: data.map((row) => row.count),
                 },
             ],
