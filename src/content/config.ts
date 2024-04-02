@@ -14,6 +14,7 @@ const blog = defineCollection({
         colorOne: z.string().optional(),
         colorTwo: z.string().optional(),
         txtColor: z.string().optional(),
+        author: z.string().optional(),
     }),
 })
 
