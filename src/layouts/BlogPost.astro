@@ -7,7 +7,8 @@ import FormattedDate from '../components/FormattedDate.astro'
 
 type Props = CollectionEntry<'blog'>['data']
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props
+const { title, description, pubDate, updatedDate, heroImage, author } =
+    Astro.props
 ---
 
 <html lang="en">
@@ -41,16 +42,22 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props
                 </div>
                 <div class="prose">
                     <div class="title">
-                        <div class="dark:text-cyan-300 mt-4">
-                            Published:
+                        <div class="dark:text-white mt-4">
+                            <i class="fa-regular fa-calendar-days mr-2"></i> Published:
                             <FormattedDate date={pubDate} />
                             {
                                 updatedDate && (
                                     <div class="last-updated-on">
+                                        <i class="fa-regular fa-calendar-days" />{' '}
                                         Last updated on{' '}
                                         <FormattedDate date={updatedDate} />
                                     </div>
                                 )
+                            }
+                        </div>
+                        <div class="dark:text-white my-2">
+                            <i class="fa-solid fa-pencil mr-2"></i> Author: {
+                                author
                             }
                         </div>
 

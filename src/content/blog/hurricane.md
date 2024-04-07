@@ -7,6 +7,7 @@ imgAlt: 'Hurricane Safety & Awareness'
 colorOne: 'rgb(110 231 183)'
 colorTwo: 'rgb(8 47 73)'
 txtColor: 'rgb(255 255 255)'
+author: 'Billy Strange'
 ---
 
 <div class='w-full h-auto mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4'>
