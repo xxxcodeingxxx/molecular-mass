@@ -1,0 +1,61 @@
+---
+export interface Props {
+    location: string
+    temp: string
+    feels: string
+    icon: string
+    details: string
+    img: string
+    colorBg: string
+    colorText: string
+    colorBorder: string
+    hoverTxt: string
+    btnID: string
+}
+
+const {
+    location,
+    temp,
+    feels,
+    icon,
+    details,
+    img,
+    colorBg,
+    colorText,
+    colorBorder,
+    hoverTxt,
+    btnID,
+} = Astro.props
+
+import Button from './Button.astro'
+---
+
+<div
+    class={`w-full h-auto px-4 py-20 mx-auto relative text-left bg-headerBg bg-center bg-cover bg-no-repeat`}
+    style={`background-image: url(${img});`}
+>
+    <div class="w-full h-full absolute top-0 left-0 bg-black/75 z-10"></div>
+    <span class="text-2xl block font-semibold relative z-20"
+        >Location: {location}</span
+    >
+    <span class="text-2xl block font-semibold relative z-20"
+        >Temperature: {temp}°</span
+    >
+    <span class="text-2xl block font-semibold relative z-20"
+        >Feels Like: {feels}°</span
+    >
+    <span class="block text-2xl absolute top-8 right-4 z-20">
+        <i class={`fa-solid ${icon} ${colorText}`}></i>
+    </span>
+    <p class="text-lg relative z-20 font-thin text-white py-8 pr-4">
+        <span class={`font-semibold ${colorText} mr-2`}>Weather Details:</span>
+        {details}
+    </p>
+    <div class="w-full h-auto text-center">
+        <Button
+            id={`${btnID}`}
+            txt="Learn More"
+            className={`my-4 mx-auto relative z-20 text-white ${colorBg} border-2 ${colorBorder} font-semibold ease-in-out duration-700 hover:bg-white ${hoverTxt}`}
+        />
+    </div>
+</div>

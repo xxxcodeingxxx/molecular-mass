@@ -3,8 +3,7 @@ import BaseHead from '../components/BaseHead.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
-import Button from '../components/Button.astro'
-import Rhombus from '../components/Rhombus.astro'
+import WeatherCard from '../components/WeatherCard.astro'
 ---
 
 <!doctype html>
@@ -47,120 +46,45 @@ import Rhombus from '../components/Rhombus.astro'
             <div
                 class="w-full h-auto mx-auto py-8 text-center grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4"
             >
-                <div
-                    class="w-full h-auto px-4 py-20 mx-auto relative text-left bg-headerBg bg-center bg-cover bg-no-repeat bg-[url('https://images.unsplash.com/photo-1578455451341-4abd1a00567e')]"
-                >
-                    <div
-                        class="w-full h-full absolute top-0 left-0 bg-black/75 z-10"
-                    >
-                    </div>
-                    <span class="text-2xl block font-semibold relative z-20"
-                        >Location: Columbus, Ohio</span
-                    >
-                    <span class="text-2xl block font-semibold relative z-20"
-                        >Temperature: 28°</span
-                    >
-                    <span class="text-2xl block font-semibold relative z-20"
-                        >Feels Like: 19°</span
-                    >
-                    <span class="block text-2xl absolute top-8 right-4 z-20">
-                        <i class="fa-solid fa-snowflake text-sky-300"></i>
-                    </span>
-                    <p
-                        class="text-lg relative z-20 font-thin text-white py-8 pr-4"
-                    >
-                        <span class="font-semibold text-sky-300 mr-2"
-                            >Weather Details:</span
-                        >
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Praesentium quae natus magnam doloremque, quam velit provident
-                        aliquam explicabo totam, excepturi veniam officia culpa accusantium
-                        quidem quibusdam! Laboriosam deleniti eaque fugit?
-                    </p>
-                    <div class="w-full h-auto text-center">
-                        <Button
-                            id="columbus"
-                            txt="Learn More"
-                            className="my-4 mx-auto relative z-20 text-white bg-sky-300 font-semibold ease-in-out duration-700 hover:bg-sky-100 hover:text-sky-400"
-                        />
-                    </div>
-                </div>
-                <div
-                    class="w-full h-auto px-4 py-20 mx-auto relative text-left bg-headerBg bg-center bg-cover bg-no-repeat bg-[url('https://images.unsplash.com/photo-1597716856994-03fd0d2495ea')]"
-                >
-                    <div
-                        class="w-full h-full absolute top-0 left-0 bg-black/50 z-10"
-                    >
-                    </div>
-                    <span class="text-2xl block font-semibold relative z-20"
-                        >Mexico City, Mexico</span
-                    >
-                    <span class="text-2xl block font-semibold relative z-20"
-                        >Temperature: 79°</span
-                    >
-                    <span class="text-2xl block font-semibold relative z-20"
-                        >Feels Like: 75°</span
-                    >
-                    <span class="block text-2xl absolute top-8 right-4 z-20">
-                        <i class="fa-solid fa-sun text-amber-400"></i>
-                    </span>
-                    <p
-                        class="text-lg relative z-20 font-thin text-white py-8 pr-4"
-                    >
-                        <span class="font-semibold text-amber-400 mr-2"
-                            >Weather Details:</span
-                        >
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Praesentium quae natus magnam doloremque, quam velit provident
-                        aliquam explicabo totam, excepturi veniam officia culpa accusantium
-                        quidem quibusdam! Laboriosam deleniti eaque fugit?
-                    </p>
-                    <div class="w-full h-auto text-center">
-                        <Button
-                            id="mexico"
-                            txt="Learn More"
-                            className="my-4 mx-auto relative z-20 text-white bg-amber-300 font-semibold ease-in-out duration-700 hover:bg-amber-100 hover:text-amber-400"
-                        />
-                    </div>
-                </div>
-                <div
-                    class="w-full h-auto px-4 py-20 mx-auto relative text-left bg-headerBg bg-center bg-cover bg-no-repeat bg-[url('https://images.unsplash.com/photo-1533106497176-45ae19e68ba2')]"
-                >
-                    <div
-                        class="w-full h-full absolute top-0 left-0 bg-black/75 z-10"
-                    >
-                    </div>
-                    <span class="text-2xl block font-semibold relative z-20"
-                        >Location: Miami, Florida</span
-                    >
-                    <span class="text-2xl block font-semibold relative z-20"
-                        >Temperature: 73°</span
-                    >
-                    <span class="text-2xl block font-semibold relative z-20"
-                        >Feels Like: 71°</span
-                    >
-                    <span class="block text-2xl absolute top-8 right-4 z-20">
-                        <i class="fa-solid fa-cloud text-gray-400"></i>
-                    </span>
-                    <p
-                        class="text-lg relative z-20 font-thin text-white py-8 pr-4"
-                    >
-                        <span class="font-semibold text-gray-400 mr-2"
-                            >Weather Details:</span
-                        >
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Praesentium quae natus magnam doloremque, quam velit provident
-                        aliquam explicabo totam, excepturi veniam officia culpa accusantium
-                        quidem quibusdam! Laboriosam deleniti eaque fugit?
-                    </p>
-                    <div class="w-full h-auto text-center">
-                        <Button
-                            id="miami"
-                            txt="Learn More"
-                            className="my-4 mx-auto relative z-20 bg-gray-400 ease-in-out font-semibold duration-700 hover:bg-gray-100 hover:text-headerBg"
-                        />
-                    </div>
-                </div>
+                <WeatherCard
+                    location="Columbus, Ohio"
+                    temp="28"
+                    feels="19"
+                    img="https://images.unsplash.com/photo-1578455451341-4abd1a00567e"
+                    colorBg="bg-sky-300"
+                    colorText="text-sky-300"
+                    colorBorder="border-sky-300"
+                    hoverTxt="hover:text-sky-300"
+                    btnID="columbus"
+                    details={`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium quae natus magnam doloremque, quam velit provident aliquam explicabo totam, excepturi veniam officia culpa accusantium quidem quibusdam! Laboriosam deleniti eaque fugit?`}
+                    icon="fa-snowflake"
+                />
+                <WeatherCard
+                    temp="79"
+                    feels="75"
+                    location="Mexico City, Mexico"
+                    img="https://images.unsplash.com/photo-1597716856994-03fd0d2495ea"
+                    colorBg="bg-amber-300"
+                    colorText="text-amber-300"
+                    colorBorder="border-amber-300"
+                    hoverTxt="hover:text-amber-300"
+                    btnID="mexico"
+                    icon="fa-sun"
+                    details="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium quae natus magnam doloremque, quam velit provident aliquam explicabo totam, excepturi veniam officia culpa accusantium quidem quibusdam! Laboriosam deleniti eaque fugit?"
+                />
+                <WeatherCard
+                    temp="73"
+                    feels="71"
+                    location="Miami, Florida"
+                    img="https://images.unsplash.com/photo-1533106497176-45ae19e68ba2"
+                    colorBg="bg-gray-300"
+                    colorText="text-gray-300"
+                    colorBorder="border-gray-300"
+                    hoverTxt="hover:text-gray-300"
+                    btnID="miami"
+                    icon="fa-cloud"
+                    details="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium quae natus magnam doloremque, quam velit provident aliquam explicabo totam, excepturi veniam officia culpa accusantium quidem quibusdam! Laboriosam deleniti eaque fugit?"
+                />
             </div>
             <div class="grid grid-cols-4 relative w-full mx-auto h-auto py-12">
                 <div class="w-full h-auto col-span-1 mx-auto">
