@@ -21,51 +21,171 @@ const { title, description, pubDate, updatedDate, heroImage, author } =
     >
         <Header />
         <main class="w-10/12 h-auto mx-auto py-12">
-            <article>
-                <div class="w-fit h-auto">
-                    <button
-                        onclick="location.href = '/blog'"
-                        class="py-2 px-4 text-center mb-4 bg-black text-white text-base font-semibold uppercase duration-700 ease-in-out hover:bg-white hover:text-black"
-                    >
-                        &larr; <span class="ml-2">Go Back</span>
-                    </button>
-                </div>
-                <div
-                    class={`w-full h-[500px] mx-auto bg-center bg-cover bg-no-repeat`}
-                    style={`background-image: url('${heroImage}')`}
-                >
-                    <h1
-                        class="text-5xl w-10/12 lg:w-1/2 h-auto mx-auto text-white text-center bg-black p-2 translate-y-[240px]"
-                    >
-                        {title}
-                    </h1>
-                </div>
-                <div class="prose">
-                    <div class="title">
-                        <div class="dark:text-white mt-4">
-                            <i class="fa-regular fa-calendar-days mr-2"></i> Published:
-                            <FormattedDate date={pubDate} />
-                            {
-                                updatedDate && (
-                                    <div class="last-updated-on">
-                                        <i class="fa-regular fa-calendar-days" />{' '}
-                                        Last updated on{' '}
-                                        <FormattedDate date={updatedDate} />
-                                    </div>
-                                )
-                            }
+            <div
+                class="w-full h-auto grid grid-cols-1 lg:grid-cols-4 gap-8 mx-auto"
+            >
+                <div class="lg:col-span-3 lg:order-1 order-2">
+                    <article>
+                        <div class="w-fit h-auto">
+                            <button
+                                onclick="location.href = '/blog'"
+                                class="py-2 px-4 text-center mb-4 bg-black text-white text-base font-semibold uppercase duration-700 ease-in-out hover:bg-white hover:text-black"
+                            >
+                                &larr; <span class="ml-2">Go Back</span>
+                            </button>
                         </div>
-                        <div class="dark:text-white my-2">
-                            <i class="fa-solid fa-pencil mr-2"></i> Author: {
-                                author
-                            }
+                        <div
+                            class={`w-full h-[500px] mx-auto bg-center rounded-2xl bg-cover bg-no-repeat`}
+                            style={`background-image: url('${heroImage}')`}
+                        >
+                            <h1
+                                class="text-5xl w-10/12 lg:w-1/2 h-auto mx-auto text-white text-center bg-black p-2 translate-y-[240px]"
+                            >
+                                {title}
+                            </h1>
                         </div>
+                        <div class="prose">
+                            <div class="title">
+                                <div
+                                    class="dark:text-white mt-4 inline-block mr-4"
+                                >
+                                    <i class="fa-regular fa-calendar-days mr-2"
+                                    ></i>
+                                    <FormattedDate date={pubDate} />
+                                    {
+                                        updatedDate && (
+                                            <div class="last-updated-on">
+                                                <i class="fa-regular fa-calendar-days" />{' '}
+                                                Last updated on{' '}
+                                                <FormattedDate
+                                                    date={updatedDate}
+                                                />
+                                            </div>
+                                        )
+                                    }
+                                </div>
+                                <div class="dark:text-white my-2 inline-block">
+                                    <i class="fa-solid fa-pencil mr-2"></i>
+                                    {author}
+                                </div>
 
-                        <hr class="border-cyan-300 mb-4" />
-                    </div>
-                    <slot />
+                                <hr class="border-cyan-300 mb-4" />
+                            </div>
+                            <slot />
+                        </div>
+                    </article>
                 </div>
-            </article>
+                <div class="order-1 lg:order-2 col-span-1 mt-16">
+                    <aside
+                        class="bg-black/50 rounded-xl relative w-full h-auto py-16 px-4"
+                    >
+                        <img
+                            src="https://plus.unsplash.com/premium_photo-1681882640507-0f0b07c8d5d6"
+                            alt="Blonde and horse"
+                            class="absolute -top-20 left-1/3 ring-4 ring-cyan-500 ring-offset-4 ring-offset-black/50 rounded-full w-32 h-32"
+                        />
+                        <p class="text-base text-center">
+                            Hello! I'm <a
+                                class="text-cyan-500 duration-700 ease-in-out hover:text-blue-500"
+                                href="/">Blonde</a
+                            >, I write about meteorlogical events and weather
+                            related phenomenon. My best friend in whole world is
+                            my horse sniffles.
+                        </p>
+                    </aside>
+                    <div class="w-full hidden lg:block h-auto text-left my-8">
+                        <h3 class="text-xl text-cyan-400 uppercase mb-8">
+                            Follow Blog
+                        </h3>
+                        <div class="w-full h-auto grid grid-cols-3 gap-1">
+                            <div class="p-6 bg-black/50 text-center">
+                                <a href="https://www.facebook.com">
+                                    <i
+                                        class="fa-brands fa-facebook fa-3x text-center text-cyan-400 duration-700 ease-in-out hover:text-blue-500"
+                                    ></i>
+                                </a>
+                            </div>
+                            <div class="p-6 bg-black/50 text-center">
+                                <a href="https://www.instagram.com">
+                                    <i
+                                        class="fa-brands fa-instagram fa-3x text-center text-cyan-400 duration-700 ease-in-out hover:text-blue-500"
+                                    ></i>
+                                </a>
+                            </div>
+                            <div class="p-6 bg-black/50 text-center">
+                                <a href="https://www.twitter.com">
+                                    <i
+                                        class="fa-brands fa-twitter fa-3x text-center text-cyan-400 duration-700 ease-in-out hover:text-blue-500"
+                                    ></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mt-8 w-full h-auto">
+                            <h3 class="text-xl uppercase mb-8 text-cyan-400">
+                                most popular
+                            </h3>
+                            <div class="w-full h-auto grid grid-cols-1 gap-y-4">
+                                <div class="w-full h-auto bg-black/50 p-4">
+                                    <a href="/blog/snow">
+                                        <img
+                                            src="/images/blogImgs/snow.jpg"
+                                            alt="Snowden"
+                                            class="w-12 h-12 inline-block duration-700 ease-in-out hover:-rotate-12"
+                                        />
+                                        <h3
+                                            class="text-xl text-cyan-500 ml-4 inline-block duration-700 ease-in-out hover:text-blue-500"
+                                        >
+                                            The Whiteout Wonders
+                                        </h3>
+                                    </a>
+                                </div>
+                                <div class="w-full h-auto bg-black/50 p-4">
+                                    <a href="/blog/tornados">
+                                        <img
+                                            src="/images/blogImgs/tornado.jpg"
+                                            alt="Tornados"
+                                            class="w-12 h-12 inline-block duration-700 ease-in-out hover:-rotate-12"
+                                        />
+                                        <h3
+                                            class="text-xl text-cyan-500 ml-4 inline-block duration-700 ease-in-out hover:text-blue-500"
+                                        >
+                                            Natures Violent Storms
+                                        </h3>
+                                    </a>
+                                </div>
+                                <div class="w-full h-auto bg-black/50 p-4">
+                                    <a href="/blog/thunder">
+                                        <img
+                                            src="/images/blogImgs/thunderstorm.jpg"
+                                            alt="Thunderstorms"
+                                            class="w-12 h-12 inline-block duration-700 ease-in-out hover:-rotate-12"
+                                        />
+                                        <h3
+                                            class="text-xl text-cyan-500 ml-4 inline-block duration-700 ease-in-out hover:text-blue-500"
+                                        >
+                                            Unraveling Thunderstorms
+                                        </h3>
+                                    </a>
+                                </div>
+                                <div class="w-full h-auto bg-black/50 p-4">
+                                    <a href="/blog/hurricane">
+                                        <img
+                                            src="/images/blogImgs/hurricane.jpg"
+                                            alt="Eye of the storm hurricanes"
+                                            class="w-12 h-12 inline-block duration-700 ease-in-out hover:-rotate-12"
+                                        />
+                                        <h3
+                                            class="text-xl text-cyan-500 ml-4 inline-block duration-700 ease-in-out hover:text-blue-500"
+                                        >
+                                            Giants of the Ocean
+                                        </h3>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
         <Footer />
     </body>
