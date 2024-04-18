@@ -7,8 +7,17 @@ import FormattedDate from '../components/FormattedDate.astro'
 
 type Props = CollectionEntry<'blog'>['data']
 
-const { title, description, pubDate, updatedDate, heroImage, author } =
-    Astro.props
+const {
+    title,
+    description,
+    pubDate,
+    updatedDate,
+    heroImage,
+    author,
+    categoryOne,
+    categoryTwo,
+    categoryThree,
+} = Astro.props
 ---
 
 <html lang="en">
@@ -47,10 +56,31 @@ const { title, description, pubDate, updatedDate, heroImage, author } =
                         <div class="prose">
                             <div class="title">
                                 <div
-                                    class="dark:text-white mt-4 inline-block mr-4"
+                                    class="dark:text-gray-400 mt-4 inline-block mr-4"
                                 >
-                                    <i class="fa-regular fa-calendar-days mr-2"
-                                    ></i>
+                                    <i class="fa-regular fa-folder mr-2"></i>
+                                    <span
+                                        class="duration-700 cursor-pointer ease-in-out hover:text-cyan-400"
+                                    >
+                                        {categoryOne}
+                                    </span>
+                                    <span class="mx-2">/</span>
+                                    <span
+                                        class="duration-700 cursor-pointer ease-in-out hover:text-cyan-400"
+                                    >
+                                        {categoryTwo}
+                                    </span>
+                                    <span class="mx-2"> / </span>
+                                    <span
+                                        class="duration-700 cursor-pointer ease-in-out hover:text-cyan-400"
+                                    >
+                                        {categoryThree}
+                                    </span>
+                                </div>
+                                <div
+                                    class="dark:text-gray-400 mt-4 inline-block mr-4"
+                                >
+                                    <i class="fa-regular fa-clock mr-2"></i>
                                     <FormattedDate date={pubDate} />
                                     {
                                         updatedDate && (
@@ -64,14 +94,60 @@ const { title, description, pubDate, updatedDate, heroImage, author } =
                                         )
                                     }
                                 </div>
-                                <div class="dark:text-white my-2 inline-block">
-                                    <i class="fa-solid fa-pencil mr-2"></i>
+                                <div
+                                    class="dark:text-gray-400 my-2 inline-block"
+                                >
+                                    <i
+                                        class="fa-solid fa-user-tie text-gray-400 mr-2"
+                                    ></i>
                                     {author}
                                 </div>
 
-                                <hr class="border-cyan-300 mb-4" />
+                                <hr class="border-gray-400 mb-4" />
                             </div>
                             <slot />
+                            <div class="w-1/4 h-auto text-small py-4">
+                                <hr class="border-cyan-400 w-1/4 mb-2" />
+                                <div>Share This:</div>
+                                <div class="py-2">
+                                    <a href={`${Astro.url}?share=facebook`}>
+                                        <span
+                                            class="fa-stack fa-2x cursor-pointer opacity-100 duration-700 ease-in-out hover:opacity-50"
+                                        >
+                                            <i
+                                                class="fa-solid fa-circle fa-stack-2x text-blue-400"
+                                            ></i>
+                                            <i
+                                                class="fa-brands fa-facebook-f fa-stack-1x fa-inverse"
+                                            ></i>
+                                        </span>
+                                    </a>
+                                    <a href={`${Astro.url}?share=instagram`}>
+                                        <span
+                                            class="fa-stack fa-2x opacity-100 duration-700 ease-in-out hover:opacity-50"
+                                        >
+                                            <i
+                                                class="fa-solid fa-circle fa-stack-2x text-fuchsia-400"
+                                            ></i>
+                                            <i
+                                                class="fa-brands fa-instagram fa-stack-1x fa-inverse"
+                                            ></i>
+                                        </span>
+                                    </a>
+                                    <a href={`${Astro.url}?share=twitter`}>
+                                        <span
+                                            class="fa-stack fa-2x opacity-100 duration-700 ease-in-out hover:opacity-50"
+                                        >
+                                            <i
+                                                class="fa-solid fa-circle fa-stack-2x text-sky-400"
+                                            ></i>
+                                            <i
+                                                class="fa-brands fa-twitter fa-stack-1x fa-inverse"
+                                            ></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </article>
                 </div>
@@ -188,5 +264,10 @@ const { title, description, pubDate, updatedDate, heroImage, author } =
             </div>
         </main>
         <Footer />
+        <style>
+            .fa-stack {
+                font-size: 1em;
+            }
+        </style>
     </body>
 </html>
