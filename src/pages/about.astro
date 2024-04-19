@@ -7,37 +7,119 @@ import Header from '../components/Header.astro'
 <!doctype html>
 <html lang="en">
     <head>
-        <BaseHead title="About Weather Data" description="" image="" />
+        <BaseHead
+            title="About Weather Data"
+            description="Welcome to Weather Data, your ultimate source for accurate, timely, and detailed weather information."
+            image="/images/other/weatherData.jpg"
+        />
     </head>
     <body
-        class="w-screen h-screen relative bg-ligh z-0 bg-center bg-cover bg-no-repeat bg-[url('https://images.unsplash.com/photo-1556983703-27576e5afa24')] text-lteTxt dark:bg-darkMode dark:text-dmTxt"
+        class="w-screen h-screen bg-light text-lteTxt dark:bg-darkMode dark:text-dmTxt"
     >
-        <div class="w-full h-full absolute top-0 left-0 bg-black/[.95] z-10">
-        </div>
-        <Header classNames="relative z-20" />
-        <div class="w-1/2 h-auto text-center z-20 relative mx-auto py-20">
-            <h1 class="text-center text-5xl">About Weather Data</h1>
+        <Header />
+        <div class="w-full h-auto">
             <div
-                class="w-full h-auto py-20 grid gap-8 grid-cols-1 lg:grid-cols-2 2xl:grid-cols-4"
+                class="w-full h-[450px] bg-cover bg-no-repeat bg-center bg-fixed bg-[url('/images/other/weatherData.jpg')]"
             >
-                <div
-                    class="w-full min-h-64 rounded-xl bg-gradient-to-br from-indigo-500 from-30% to-sky-400"
+            </div>
+            <div class="w-10/12 lg:w-3/4 mx-auto h-auto py-12">
+                <h3 id="title" class="text-2xl relative w-fit h-auto mb-6">
+                    About Weather Data
+                </h3>
+                <p class="text-lg text-justify">
+                    Welcome to Weather Data, your ultimate source for accurate,
+                    timely, and detailed weather information. At Weather Data,
+                    our mission is to empower you with comprehensive
+                    meteorological data and insights, helping you make informed
+                    decisions whether you're planning your day, managing
+                    agricultural activities, or safeguarding your community from
+                    extreme weather events.
+                </p>
+                <h3
+                    id="title"
+                    class="text-2xl relative w-fit h-auto mb-6 mt-12"
                 >
-                </div>
-                <div
-                    class="w-full min-h-64 rounded-xl bg-gradient-to-br from-indigo-500 from-30% to-sky-400"
-                >
-                </div>
-                <div
-                    class="w-full min-h-64 rounded-xl bg-gradient-to-br from-indigo-500 from-30% to-sky-400"
-                >
-                </div>
-                <div
-                    class="w-full min-h-64 rounded-xl bg-gradient-to-br from-indigo-500 from-30% to-sky-400"
-                >
-                </div>
+                    Our Vision
+                </h3>
+                <p class="text-lg text-justify">
+                    Weather Data envisions a world where everyone has access to
+                    the latest weather information, enabling individuals and
+                    organizations to operate safely and efficiently regardless
+                    of weather conditions. We aim to be your first choice for
+                    reliable weather forecasts, historical weather data, and
+                    climate analytics.
+                </p>
+                <h3 id="title" class="text-2xl relative w-fit mb-6 mt-12">
+                    Our Services
+                </h3>
+                <p class="text-lg text-justify">
+                    Weather Data offers a range of services designed to meet the
+                    needs of individuals, businesses, and researchers alike:
+                </p>
+                <ul class="list-disc list-inside w-full h-auto mx-auto my-4">
+                    <li class="my-2">
+                        <span class="text-booo font-bold mr-2"
+                            >Real-Time Weather Forecasts:</span
+                        > Get up-to-the-minute weather forecasts for any location
+                        around the globe. Whether it's sunny skies or impending storms,
+                        we keep you updated.
+                    </li>
+                    <li class="my-2">
+                        <span class="text-booo font-bold mr-2"
+                            >Historical Weather Data:</span
+                        > Access detailed records of past weather conditions to aid
+                        in research, planning, and analysis for various projects
+                        and needs.
+                    </li>
+                    <li class="my-2">
+                        <span class="text-booo font-bold mr-2"
+                            >Custom Weather Alerts:</span
+                        > Subscribe to receive customized weather alerts directly
+                        to your email or mobile device. Stay safe with notifications
+                        on severe weather affecting your area.
+                    </li>
+                    <li class="my-2">
+                        <span class="text-booo font-bold mr-2"
+                            >Climate Analysis:</span
+                        > Utilize our in-depth climate analysis tools to understand
+                        long-term weather patterns and trends which are essential
+                        for planning in agriculture, construction, and urban planning.
+                    </li>
+                </ul>
+                <h3 id="title" class="text-2xl relative w-fit mb-6 mt-12">
+                    Our Technology
+                </h3>
+                <p class="text-lg text-justify">
+                    At Weather Data, we leverage cutting-edge technology and the
+                    expertise of meteorologists to provide you with the most
+                    accurate weather predictions. Our platform integrates data
+                    from satellites, radar, weather stations, and other
+                    sophisticated monitoring systems, processed by our advanced
+                    forecasting models.
+                </p>
+                <h3 id="title" class="text-2xl relative w-fit mb-6 mt-12">
+                    Our Commitment
+                </h3>
+                <p class="text-lg text-justify">
+                    We are committed to providing the highest level of service.
+                    Weather Data believes in the importance of being a reliable
+                    resource for weather information, which is why we
+                    continuously work to improve our data accuracy and service
+                    quality.
+                </p>
             </div>
         </div>
-        <Footer classNames="absolute bottom-0 z-20 left-0 w-screen h-auto" />
+        <Footer />
+        <style>
+            #title::after {
+                content: '';
+                width: 50px;
+                height: 2px;
+                position: absolute;
+                bottom: -8px;
+                left: 0;
+                background-color: theme(colors.booo);
+            }
+        </style>
     </body>
 </html>

@@ -12,11 +12,11 @@ import { SITE_TITLE } from '../consts'
 <header
     class={`shadow-lg w-full h-auto px-6 bg-gray-200 dark:shadow-none dark:bg-headerBg ${classNames}`}
 >
-    <nav>
+    <nav class="py-6 md:py-0">
         <h2 class="text-xl duration-700 ease-in-out hover:text-booo">
             <a href="/">{SITE_TITLE}</a>
         </h2>
-        <div class="internal-links">
+        <div class="internal-links hidden md:block">
             <HeaderLink
                 class:list={`duration-700 ease-in-out text-xl`}
                 href="/"
