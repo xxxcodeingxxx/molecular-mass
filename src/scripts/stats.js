@@ -1,4 +1,6 @@
 const answers = document.getElementById('answers')
+const container = document.getElementById('AnswCont')
+const clearMsg = document.getElementById('clearMsg')
 const Cname = document.getElementById('cName')
 const pop = document.getElementById('cPop')
 const murders = document.getElementById('cMurder')
@@ -24,9 +26,11 @@ function murdChance(population, yrlyMurders) {
     chancePercentage = chance * 100
 
     if (population && yrlyMurders) {
-        answers.innerHTML = `Chances of Being Murdered in ${
+        answers.innerHTML = `Chances of Being <span class="text-red-500">Murdered</span> in <span class="text-red-500">${
             Cname.value
-        } are ${chancePercentage.toFixed(2)}%`
+        }</span> are <span class="text-red-500">${chancePercentage.toFixed(
+            2
+        )}%</span>`
     } else {
         answers.innerHTML = `<i class="fa-solid text-3xl text-white mr-4 fa-triangle-exclamation"></i> Sorry, but you didn't enter enough information! Please try again... <i class="fa-solid text-3xl text-white ml-4 fa-triangle-exclamation"></i>`
         answers.classList.add('text-white', 'font-bold')
@@ -35,7 +39,19 @@ function murdChance(population, yrlyMurders) {
 
 submit.addEventListener('click', () => {
     murdChance(pop.value, murders.value)
-    answers.classList.remove('hidden')
+    container.classList.remove('hidden')
+    container.classList.add('fadeMsg')
+    answers.classList.add('fadeMsg')
+})
+
+clearMsg.addEventListener('click', () => {
+    container.classList.add('hidden')
+    container.classList.remove('fadeMsg')
+    answers.classList.remove('fadeMsg')
+    answers.innerHTML = ''
+    Cname.value = ''
+    pop.value = ''
+    murders.value = ''
 })
 
 import Chart from 'chart.js/auto'
