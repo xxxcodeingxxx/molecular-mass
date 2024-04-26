@@ -12,10 +12,20 @@ import { SITE_TITLE } from '../consts'
 <header
     class={`shadow-lg w-full h-auto px-6 bg-gray-200 dark:shadow-none dark:bg-headerBg ${classNames}`}
 >
-    <nav class="py-6 md:py-0">
+    <nav class="py-6 relative flex items-center justify-between md:py-0">
         <h2 class="text-xl duration-700 ease-in-out hover:text-booo">
             <a href="/">{SITE_TITLE}</a>
         </h2>
+        <div class="w-fit h-auto md:hidden absolute top-1/4 right-8">
+            <i
+                id="openMenu"
+                class="fa-solid duration-700 ease-in-out cursor-pointer fa-burger fa-2x hover:opacity-50"
+            ></i>
+            <i
+                id="closeMenu"
+                class="fa-solid fa-lock duration-700 hidden ease-in-out cursor-pointer fa-2x hover:opacity-50"
+            ></i>
+        </div>
         <div class="internal-links hidden md:block">
             <HeaderLink
                 class:list={`duration-700 ease-in-out text-xl`}
@@ -82,12 +92,84 @@ import { SITE_TITLE } from '../consts'
         </div>
     </nav>
 </header>
+<nav
+    id="mobileMenu"
+    class="w-screen dark:bg-[#565656] hidden md:hidden relative z-20 opacity-0 h-auto"
+>
+    <div class="w-3/4 mx-auto h-auto">
+        <HeaderLink
+            class:list={`duration-700 !block ease-in-out text-xl`}
+            href="/"
+        >
+            Home
+        </HeaderLink>
+        <HeaderLink
+            class:list={`duration-700 !block ease-in-out text-xl`}
+            href="/blog"
+        >
+            Blog
+        </HeaderLink>
+        <HeaderLink
+            class:list={`duration-700 !block ease-in-out text-xl`}
+            href="/about"
+        >
+            About
+        </HeaderLink>
+        <HeaderLink
+            class:list={`duration-700 !block ease-in-out text-xl`}
+            href="/stats"
+        >
+            Stats
+        </HeaderLink>
+        <div class="w-full h-auto mx-auto py-10 text-center">
+            <a
+                href="https://github.com/xxxcodeingxxx/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <span class="sr-only">Go to our GitHub repo</span>
+                <span>
+                    <i
+                        class="fa-brands fa-github fa-2x duration-700 ease-in-out hover:text-booo"
+                    ></i>
+                </span>
+            </a>
+            <a
+                href="https://twitter.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <span class="sr-only">Follow Us On Twitter</span>
+                <span>
+                    <i
+                        class="fa-brands fa-x-twitter fa-2x duration-700 mx-20 ease-in-out hover:text-booo"
+                    ></i>
+                </span>
+            </a>
+            <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <span class="sr-only">Follow Us On Instagram</span>
+                <span>
+                    <i
+                        class="fa-brands fa-instagram fa-2x duration-700 ease-in-out hover:text-booo"
+                    ></i>
+                </span>
+            </a>
+        </div>
+    </div>
+</nav>
+<script>
+    import '../scripts/menu'
+</script>
 <style>
-    nav {
+    /* nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
-    }
+    } */
     nav a {
         padding: 1em 0.5em;
         color: var(--black);
@@ -106,5 +188,33 @@ import { SITE_TITLE } from '../consts'
         .social-links {
             display: none;
         }
+    }
+
+    @keyframes openMenu {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes closeMenu {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .openMenu {
+        animation: openMenu 0.8s ease-in-out forwards;
+        opacity: 1;
+    }
+
+    .closeMenu {
+        animation: closeMenu 0.8s ease-in-out forwards;
+        opacity: 0;
     }
 </style>
